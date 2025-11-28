@@ -1,5 +1,8 @@
 # Welcome to github proj
 
+## DUMMY CHANGES
+
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/e43a7c8e-0d2d-4230-8840-639171a413a8
