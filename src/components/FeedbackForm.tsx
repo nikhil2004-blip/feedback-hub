@@ -57,10 +57,15 @@ const FeedbackForm = () => {
   };
 
   return (
-    <Card className="p-8 max-w-2xl mx-auto shadow-md border-border bg-card">
-      <form onSubmit={handleSubmit} className="space-y-6">
+    <Card className="p-8 max-w-2xl mx-auto shadow-sm border-border bg-card">
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold text-foreground mb-1">Feedback Form</h2>
+        <p className="text-sm text-muted-foreground">Help us improve by sharing your experience</p>
+      </div>
+      
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-card-foreground font-medium">
+          <Label htmlFor="name" className="text-sm font-medium text-foreground">
             Name
           </Label>
           <Input
@@ -69,13 +74,13 @@ const FeedbackForm = () => {
             placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-background border-input"
+            className="bg-background border-input focus:ring-2 focus:ring-primary/20"
             required
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-card-foreground font-medium">
+          <Label htmlFor="email" className="text-sm font-medium text-foreground">
             Email
           </Label>
           <Input
@@ -84,18 +89,18 @@ const FeedbackForm = () => {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-background border-input"
+            className="bg-background border-input focus:ring-2 focus:ring-primary/20"
             required
           />
         </div>
 
-        <div className="space-y-2">
-          <Label className="text-card-foreground font-medium">Rating</Label>
+        <div className="space-y-3">
+          <Label className="text-sm font-medium text-foreground block">Rating</Label>
           <StarRating rating={rating} onRatingChange={setRating} size="lg" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="review" className="text-card-foreground font-medium">
+          <Label htmlFor="review" className="text-sm font-medium text-foreground">
             Your Feedback
           </Label>
           <Textarea
@@ -103,19 +108,19 @@ const FeedbackForm = () => {
             placeholder="Share your thoughts..."
             value={review}
             onChange={(e) => setReview(e.target.value)}
-            className="min-h-32 bg-background border-input resize-none"
+            className="min-h-32 bg-background border-input resize-none focus:ring-2 focus:ring-primary/20"
             required
           />
         </div>
 
         <Button
           type="submit"
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-6 text-lg shadow-md hover:shadow-lg transition-all"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-6 text-base shadow-sm hover:shadow transition-shadow mt-6"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               Submitting...
             </>
           ) : (
